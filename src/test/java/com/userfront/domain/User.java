@@ -18,7 +18,8 @@ public class User {
 	private PrimaryAccount primaryAccount;
 	private SavingsAccount savingsAccount;
 	private List<Appointment> appointmentList;
-	private List<Recipient> receipientList;
+	private List<Recepient> receipientList;
+	
 	public long getUserId() {
 		return userId;
 	}
@@ -85,10 +86,10 @@ public class User {
 	public void setAppointmentList(List<Appointment> appointmentList) {
 		this.appointmentList = appointmentList;
 	}
-	public List<Recipient> getReceipientList() {
+	public List<Recepient> getReceipientList() {
 		return receipientList;
 	}
-	public void setReceipientList(List<Recipient> receipientList) {
+	public void setReceipientList(List<Recepient> receipientList) {
 		this.receipientList = receipientList;
 	}
 	@Override

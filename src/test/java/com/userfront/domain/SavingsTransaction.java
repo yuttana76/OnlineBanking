@@ -3,7 +3,8 @@ package com.userfront.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class PrimaryTransaction {
+public class SavingsTransaction {
+
 	private Long id;
 	private Date date;
 	private String description;
@@ -11,13 +12,14 @@ public class PrimaryTransaction {
 	private String status;
 	private double amount;
 	private BigDecimal availableBalance;
+	private SavingsAccount savingsAccount;
 	
-	private PrimaryAccount primaryAccount;
-	
-	public PrimaryTransaction(){}
+	public SavingsTransaction(){
+		
+	}
 
-	public PrimaryTransaction(Date date, String description, String type, String status, double amount,
-			BigDecimal availableBalance, PrimaryAccount primaryAccount) {
+	public SavingsTransaction(Date date, String description, String type, String status, double amount,
+			BigDecimal availableBalance, SavingsAccount savingsAccount) {
 		super();
 		this.date = date;
 		this.description = description;
@@ -25,7 +27,7 @@ public class PrimaryTransaction {
 		this.status = status;
 		this.amount = amount;
 		this.availableBalance = availableBalance;
-		this.primaryAccount = primaryAccount;
+		this.savingsAccount = savingsAccount;
 	}
 
 	public Long getId() {
@@ -84,12 +86,14 @@ public class PrimaryTransaction {
 		this.availableBalance = availableBalance;
 	}
 
-	public PrimaryAccount getPrimaryAccount() {
-		return primaryAccount;
+	public SavingsAccount getSavingsAccount() {
+		return savingsAccount;
 	}
 
-	public void setPrimaryAccount(PrimaryAccount primaryAccount) {
-		this.primaryAccount = primaryAccount;
+	public void setSavingsAccount(SavingsAccount savingsAccount) {
+		this.savingsAccount = savingsAccount;
 	}
+	
+	
 	
 }
