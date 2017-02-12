@@ -2,22 +2,48 @@ package com.userfront.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
 public class User {
 
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="userId",nullable=false,updatable=false)
 	private long userId;
 	private String userName;
 	private String password;
 	private String firstName;
 	private String lastName;
+	
+	@Column(name="email",nullable=false,unique=true)
 	private String email;
 	private String phone;
 	
 	private boolean enable=true;
 	
+	@OneToOne
 	private PrimaryAccount primaryAccount;
+	
+	@OneToOne
 	private SavingsAccount savingsAccount;
+	
+	@OneToMany(mappedBy ="user",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	@JsonIgnore
 	private List<Appointment> appointmentList;
+	
+	@OneToMany(mappedBy ="user",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	@JsonIgnore
 	private List<Recepient> receipientList;
 	
 	public long getUserId() {
