@@ -1,7 +1,12 @@
 package com.userfront.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.userfront.domain.User;
 
 @Controller
 public class HomeController {
@@ -13,6 +18,20 @@ public class HomeController {
 	@RequestMapping("/index")
 	public String index(){
 		return "index";
+	}
+	
+	@RequestMapping(value="/signup",method =RequestMethod.POST)
+	public String signup(Model model){
+		
+		User user = new User();
+		model.addAttribute(user);
+		
+		return "signup";
+	}
+	
+	@RequestMapping(value="/signup",method =RequestMethod.GET)
+	public void signupPost(@ModelAttribute("user")User user,Model model){
+		
 	}
 	
 }
