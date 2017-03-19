@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.userfront.domain.PrimaryAccount;
 import com.userfront.domain.PrimaryTransaction;
+import com.userfront.domain.Recipient;
 import com.userfront.domain.SavingsAccount;
 import com.userfront.domain.SavingsTransaction;
 
@@ -24,15 +25,12 @@ public interface TransactionService {
     
     
     void betweenAccountsTransfer(String transferFrom, String transferTo, String amount, Principal principal) throws Exception;
-//    void betweenAccountsTransfer(String transferFrom, String transferTo, String amount, PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws Exception;
     
-//    List<Recipient> findRecipientList(Principal principal);
-//
-//    Recipient saveRecipient(Recipient recipient);
-//
-//    Recipient findRecipientByName(String recipientName);
-//
-//    void deleteRecipientByName(String recipientName);
+    List<Recipient> findRecipientList(Principal principal);
+
+    Recipient saveRecipient(Recipient recipient);
+    Recipient findRecipientByName(String recipientName);
+    void deleteRecipientByName(String recipientName);
 //    
 //    void toSomeoneElseTransfer(Recipient recipient, String accountType, String amount, PrimaryAccount primaryAccount, SavingsAccount savingsAccount);
     

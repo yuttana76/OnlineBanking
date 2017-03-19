@@ -14,6 +14,7 @@ import com.userfront.Dao.SavingsAccountDao;
 import com.userfront.Dao.SavingsTransactionDao;
 import com.userfront.domain.PrimaryAccount;
 import com.userfront.domain.PrimaryTransaction;
+import com.userfront.domain.Recipient;
 import com.userfront.domain.SavingsAccount;
 import com.userfront.domain.SavingsTransaction;
 import com.userfront.domain.User;
@@ -108,5 +109,29 @@ public class TransactionServiceImpl implements TransactionService{
             throw new Exception("Invalid Transfer");
         }
     }
+
+	@Override
+	public List<Recipient> findRecipientList(Principal principal) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Recipient saveRecipient(Recipient recipient) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Recipient findRecipientByName(String recipientName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteRecipientByName(String recipientName) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

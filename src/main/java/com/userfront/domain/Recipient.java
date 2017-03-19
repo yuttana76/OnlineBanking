@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Recepient {
+public class Recipient {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
