@@ -22,6 +22,8 @@ public interface TransactionService {
     
     void saveSavingsWithdrawTransaction(SavingsTransaction savingsTransaction);
     
+    
+    void betweenAccountsTransfer(String transferFrom, String transferTo, String amount, Principal principal) throws Exception;
 //    void betweenAccountsTransfer(String transferFrom, String transferTo, String amount, PrimaryAccount primaryAccount, SavingsAccount savingsAccount) throws Exception;
     
 //    List<Recipient> findRecipientList(Principal principal);

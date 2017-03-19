@@ -24,7 +24,7 @@ public class AccountServiceImpl implements AccountService {
 	private final String ACCOUNTTYPE_PRIMARY="primary"; 
 	private final String ACCOUNTTYPE_SAVINGS="savings";
 	
-	private static int nextAccountNumber = 11223145;
+	private static int nextAccountNumber = 999;
 
 	@Autowired
 	private PrimaryAccountDao primaryAccountDao;
